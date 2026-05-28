@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Molina Florida | Family Program Proposal | Pyx Health</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#f6f6f6;color:#2e4456}
+
+.nav{background:#2e4456;padding:0 28px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100;flex-wrap:wrap}
+.nav-brand{color:#fff;font-family:'Roboto Slab',serif;font-weight:600;font-size:15px;padding:14px 20px 14px 0;border-right:1px solid rgba(255,255,255,.15);margin-right:12px;white-space:nowrap}
+.nav-brand span{color:#49a601}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:0;flex:1}
+.nav-tab{color:rgba(255,255,255,.65);padding:14px 16px;font-size:12px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-tab:hover{color:#fff;background:rgba(255,255,255,.05)}
+.nav-tab.active{color:#49a601;border-bottom-color:#49a601}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tp-btn{background:rgba(73,166,1,.15);border:1px solid #49a601;color:#49a601;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tp-btn.active{background:#49a601;color:#fff}
+
+.page{display:none;padding:28px}
+.page.active{display:block}
+
+.value-anchor{background:linear-gradient(135deg,#2e4456 0%,#1e3045 100%);border-radius:12px;padding:28px 32px;margin-bottom:24px;display:flex;align-items:center;gap:24px}
+.va-text h2{color:#fff;font-family:'Roboto Slab',serif;font-weight:300;font-size:22px;line-height:1.3;margin-bottom:6px}
+.va-text p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6}
+.va-text strong{color:#87d001}
+
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;margin-top:28px}
+.section-label{background:#49a601;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.section-label.purple{background:#5542a7}
+.section-label.orange{background:#d6661a}
+.section-label.teal{background:#29a4a2}
+.section-label.blue{background:#0076bf}
+.section-title{font-family:'Roboto Slab',serif;font-weight:600;font-size:17px;color:#2e4456}
+.section-divider{flex:1;height:1px;background:#d2dce8}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.kpi{background:#fff;border-radius:10px;padding:20px;border-top:3px solid #d2dce8;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.kpi.green{border-top-color:#49a601}
+.kpi.teal{border-top-color:#29a4a2}
+.kpi.blue{border-top-color:#0076bf}
+.kpi.orange{border-top-color:#d6661a}
+.kpi.purple{border-top-color:#5542a7}
+.kpi.slate{border-top-color:#2e4456}
+.kpi.lgreen{border-top-color:#87d001}
+.kpi-lbl{font-size:11px;font-weight:700;color:#6b7f8f;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.kpi-val{font-size:28px;font-weight:700;color:#2e4456;line-height:1}
+.kpi-ctx{font-size:11px;color:#8a9aab;margin-top:5px}
+.kpi-vs{font-size:10px;color:#49a601;font-weight:700;margin-top:6px}
+
+.tp-block{display:none;background:#f0f9ec;border:1px solid #87d001;border-radius:8px;padding:16px;margin-top:10px;margin-bottom:16px}
+.tp-block.visible{display:block}
+.tp-block h4{color:#2a6200;font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.tp-block h4::before{content:'▶';font-size:9px}
+.tp-block ul{padding-left:16px}
+.tp-block ul li{font-size:12px;color:#2e4456;line-height:1.6;margin-bottom:4px}
+
+.spotlight{background:linear-gradient(135deg,#49a601,#87d001);border-radius:10px;padding:24px;margin-bottom:24px;color:#fff}
+.spotlight.teal{background:linear-gradient(135deg,#29a4a2,#3acebf)}
+.spotlight.slate{background:linear-gradient(135deg,#2e4456,#1e3045)}
+.spotlight.blue{background:linear-gradient(135deg,#0076bf,#0cabec)}
+.spotlight.purple{background:linear-gradient(135deg,#5542a7,#8a74c1)}
+.spotlight.orange{background:linear-gradient(135deg,#d6661a,#ff9400)}
+.spotlight h3{font-family:'Roboto Slab',serif;font-weight:700;font-size:16px;margin-bottom:6px}
+.spotlight .tag{background:rgba(255,255,255,.2);font-size:10px;font-weight:700;padding:3px 8px;border-radius:12px;display:inline-block;margin-bottom:12px;letter-spacing:.5px}
+.spotlight p{font-size:12px;opacity:.9;line-height:1.6}
+
+.program-pillar{background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #49a601;margin-bottom:0}
+.program-pillar.guardian{border-top-color:#5542a7}
+.program-pillar.foodbox{border-top-color:#d6661a}
+.pillar-icon{font-size:28px;margin-bottom:10px;display:block}
+.pillar-title{font-family:'Roboto Slab',serif;font-weight:600;font-size:16px;color:#2e4456;margin-bottom:6px}
+.pillar-sub{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#49a601;margin-bottom:12px}
+.program-pillar.guardian .pillar-sub{color:#5542a7}
+.program-pillar.foodbox .pillar-sub{color:#d6661a}
+.pillar-body{font-size:12px;color:#6b7f8f;line-height:1.65}
+.pillar-list{list-style:none;padding:0;margin-top:12px}
+.pillar-list li{font-size:12px;color:#2e4456;line-height:1.5;padding:6px 0;border-bottom:1px solid #eff1f3;display:flex;align-items:flex-start;gap:8px}
+.pillar-list li:last-child{border-bottom:none}
+.pillar-list li::before{content:'→';color:#49a601;font-weight:700;flex-shrink:0;margin-top:1px}
+.program-pillar.guardian .pillar-list li::before{color:#5542a7}
+.program-pillar.foodbox .pillar-list li::before{color:#d6661a}
+
+.food-box-feature{background:linear-gradient(135deg,#d6661a 0%,#ff9400 100%);border-radius:12px;padding:32px;margin-bottom:24px;color:#fff}
+.food-box-feature .label{background:rgba(255,255,255,.2);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.food-box-feature h3{font-family:'Roboto Slab',serif;font-weight:700;font-size:22px;margin-bottom:10px;line-height:1.2}
+.food-box-feature .sub{font-size:13px;opacity:.9;line-height:1.65;margin-bottom:20px}
+.food-box-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.2);border-radius:8px;overflow:hidden;margin-bottom:16px}
+.fbs{background:rgba(255,255,255,.1);padding:16px;text-align:center}
+.fbs-num{font-size:26px;font-weight:700;line-height:1;margin-bottom:4px}
+.fbs-lbl{font-size:10px;opacity:.8;line-height:1.3}
+.food-box-contents{background:rgba(255,255,255,.15);border-radius:8px;padding:16px}
+.food-box-contents .ctitle{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;opacity:.8}
+.food-box-contents ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.food-box-contents ul li{font-size:12px;opacity:.9;display:flex;align-items:flex-start;gap:6px}
+.food-box-contents ul li::before{content:'✓';font-weight:700;flex-shrink:0}
+
+.barrier-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eff1f3}
+.barrier-row:last-of-type{border-bottom:none}
+.barrier-name{font-size:13px;font-weight:500;min-width:180px}
+.barrier-bar-wrap{flex:1;background:#eff1f3;border-radius:4px;height:8px}
+.barrier-bar-fill{height:8px;border-radius:4px}
+.barrier-val{font-size:11px;color:#6b7f8f;min-width:36px;text-align:right}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+
+.big-stat{background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.big-num{font-size:52px;font-weight:700;color:#49a601;line-height:1}
+.big-lbl{font-size:14px;color:#6b7f8f;margin-top:4px}
+.big-ctx{font-size:12px;color:#8a9aab;margin-top:8px;line-height:1.5}
+
+.value-tile{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid #49a601}
+.value-tile.purple{border-left-color:#5542a7}
+.value-tile.teal{border-left-color:#29a4a2}
+.value-tile.blue{border-left-color:#0076bf}
+.value-tile.orange{border-left-color:#d6661a}
+.vt-title{font-family:'Roboto Slab',serif;font-weight:600;font-size:14px;color:#2e4456;margin-bottom:6px}
+.vt-measure{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#49a601;margin-bottom:10px}
+.value-tile.purple .vt-measure{color:#5542a7}
+.value-tile.teal .vt-measure{color:#29a4a2}
+.value-tile.blue .vt-measure{color:#0076bf}
+.value-tile.orange .vt-measure{color:#d6661a}
+.vt-body{font-size:12px;color:#6b7f8f;line-height:1.6}
+
+.timeline-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid #eff1f3}
+.timeline-item:last-of-type{border-bottom:none}
+.tl-date{font-size:12px;font-weight:700;color:#fff;background:#2e4456;border-radius:6px;padding:5px 10px;white-space:nowrap;align-self:flex-start;min-width:100px;text-align:center}
+.tl-date.green{background:#49a601}
+.tl-content{flex:1}
+.tl-title{font-size:14px;font-weight:700;color:#2e4456;margin-bottom:4px}
+.tl-body{font-size:12px;color:#6b7f8f;line-height:1.5}
+
+.proof-card{background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #0076bf}
+.proof-source{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#0076bf;margin-bottom:8px}
+.proof-num{font-size:36px;font-weight:700;color:#2e4456;line-height:1;margin-bottom:4px}
+.proof-lbl{font-size:13px;color:#6b7f8f;line-height:1.4}
+
+.billing-table{background:#fff;border-radius:10px;padding:24px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow-x:auto}
+
+.data-note{background:#fff8e6;border:1px solid #ff9400;border-radius:8px;padding:12px 16px;font-size:11px;color:#6b4c00;margin-bottom:20px;line-height:1.5}
+
+.footer{margin-top:40px;padding:20px;text-align:center;font-size:11px;color:#aab5c0;border-top:1px solid #d2dce8}
+@media(max-width:700px){.two-col,.three-col,.food-box-stats,.food-box-contents ul{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-brand">Pyx <span>Health</span></div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showPage('opportunity',this)">The Opportunity</div>
+    <div class="nav-tab" onclick="showPage('program',this)">Full-Family Program</div>
+    <div class="nav-tab" onclick="showPage('florida',this)">Proven in Florida</div>
+    <div class="nav-tab" onclick="showPage('value',this)">Plan Value</div>
+    <div class="nav-tab" onclick="showPage('start',this)">Getting to October 1</div>
+  </div>
+  <div class="nav-right">
+    <button class="tp-btn" id="tp-toggle" onclick="toggleTP()">Talking Points</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     THE OPPORTUNITY
+     ============================================================ -->
+<div class="page active" id="page-opportunity">
+
+  <div class="value-anchor">
+    <svg viewBox="0 0 48 48" fill="none" style="width:48px;height:48px;flex-shrink:0">
+      <circle cx="24" cy="24" r="24" fill="rgba(73,166,1,.2)"/>
+      <path d="M16 24h16M28 18l6 6-6 6" stroke="#87d001" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="va-text">
+      <h2>Molina Florida is adding new lives. These families are entering the system right now — and the window to reach them before social barriers harden into behavioral health claims is <strong>open for a limited time.</strong> Pyx is built to step into that window.</h2>
+      <p>When youth are lonely and isolated, behavioral health risk follows. When caregivers are burned out, the whole family's health suffers. Pyx Health's Family Connection and Well-Being Program addresses both — with a proven model already running in Florida and a full-family offer designed specifically for Molina's new population.</p>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top:0">
+    <div class="section-label">The Problem</div>
+    <div class="section-title">What Molina FL's New Families Are Carrying</div>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="three-col" style="margin-bottom:24px">
+    <div class="big-stat">
+      <div class="big-num">1 in 4</div>
+      <div class="big-lbl">Florida Medicaid youth screen as lonely at intake</div>
+      <div class="big-ctx">22% UCLA-3 loneliness at baseline in FL — and 67% of those lonely youth also show behavioral health distress. Loneliness is the leading indicator for the BH claims that follow.</div>
+    </div>
+    <div class="big-stat" style="border-top:3px solid #5542a7">
+      <div class="big-num" style="color:#5542a7">71%</div>
+      <div class="big-lbl">Of FL caregivers have identified social needs</div>
+      <div class="big-ctx">Florida caregivers enrolled in comparable programs screen with UCLA-3 of 5.4 — approaching the clinical loneliness threshold — and 71% have at least one identified SDoH need. Food (27%) and housing (25%) lead. When caregivers struggle, kids don't make it to care.</div>
+    </div>
+    <div class="big-stat" style="border-top:3px solid #d6661a">
+      <div class="big-num" style="color:#d6661a">27%</div>
+      <div class="big-lbl">Of FL caregivers identify food insecurity as a barrier</div>
+      <div class="big-ctx">Food insecurity is the #1 caregiver barrier in Florida — and 13% of FL youth also report it. A family that cannot meet basic food needs is not prioritizing preventive care, behavioral health appointments, or medication adherence.</div>
+    </div>
+  </div>
+
+  <div class="spotlight slate">
+    <div class="tag">THE COMPOUND EFFECT</div>
+    <h3>When caregivers are struggling, youth health follows — and neither shows up in claims data</h3>
+    <p>In Florida's Medicaid population, family dynamics is the #1 youth barrier at 23%. That barrier doesn't come from the child — it comes from what's happening at home. Caregiver isolation, food insecurity, housing instability, and burnout flow directly into youth behavioral health trajectories. <strong>Claims data sees the downstream cost. Pyx identifies the upstream cause — before it becomes a claim.</strong></p>
+  </div>
+  <div class="tp-block" id="tp-opp-problem">
+    <h4>Talking Points — The Problem</h4>
+    <ul>
+      <li>New lives entering Molina FL are coming in with these barriers already present — the onboarding moment is the highest-value intervention window. Early engagement before behavioral health need crystallizes is dramatically less expensive than treatment after it does</li>
+      <li>1 in 4 FL youth screening lonely at intake means 25% of Molina's new youth population enters the system at elevated BH risk — before a single claim has been generated. The question is whether Molina has a program to intercept that risk</li>
+      <li>The caregiver burden numbers (71% SDoH need, UCLA-3 5.4) are not background stats — they are the mechanism by which youth behavioral health escalates. A guardian who is food insecure and socially isolated is not bringing their child to therapy or following up on care plan recommendations</li>
+      <li>Neither the youth loneliness score nor the caregiver burnout level is visible in claims. Pyx surfaces this intelligence through sustained engagement — the same data that Molina needs for SDOH documentation, equity reporting, and quality measure alignment</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label">The Moment</div>
+    <div class="section-title">Why New Lives = Maximum Leverage</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="two-col" style="margin-bottom:24px">
+    <div style="background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #49a601">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#49a601;margin-bottom:10px">Engage at Enrollment</div>
+      <div style="font-family:'Roboto Slab',serif;font-weight:600;font-size:15px;color:#2e4456;margin-bottom:10px">Families with no established patterns are the easiest to engage</div>
+      <div style="font-size:12px;color:#6b7f8f;line-height:1.65">New members haven't yet disengaged from their health plan. They haven't formed habits of ignoring outreach. The enrollment window is when trust is easiest to build — and when a food box and a human call create a first impression that drives sustained engagement.</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #5542a7">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#5542a7;margin-bottom:10px">Identify Risk Before It Costs</div>
+      <div style="font-family:'Roboto Slab',serif;font-weight:600;font-size:15px;color:#2e4456;margin-bottom:10px">Screening at intake creates the baseline — and the clinical record — that precedes intervention</div>
+      <div style="font-size:12px;color:#6b7f8f;line-height:1.65">UCLA-3 and PHQ-2 at intake for youth, UCLA-3 and PHQ-4 for guardians. The baseline is established at the first engagement — giving Molina a clinical picture of the household that no other touch point in the care system generates.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi green"><div class="kpi-lbl">Target Population</div><div class="kpi-val">20,000</div><div class="kpi-ctx">Molina FL new lives · youth + guardian program</div></div>
+    <div class="kpi purple"><div class="kpi-lbl">Program Populations</div><div class="kpi-val">2</div><div class="kpi-ctx">Youth (ages 13–17) + Guardians/Caregivers</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">Food Box Families</div><div class="kpi-val">2,000</div><div class="kpi-ctx">Up to 2 boxes · 10% of enrolled population</div></div>
+    <div class="kpi teal"><div class="kpi-lbl">FL Markets Live</div><div class="kpi-val">1</div><div class="kpi-ctx">Already running in FL — model is proven here</div></div>
+    <div class="kpi slate"><div class="kpi-lbl">Target Live Date</div><div class="kpi-val">Oct 1</div><div class="kpi-ctx">2026 · Contract required by August</div></div>
+  </div>
+
+  <div class="tp-block" id="tp-opp-moment">
+    <h4>Talking Points — The Moment</h4>
+    <ul>
+      <li>The new lives enrollment window is the highest-leverage moment in the member relationship — families entering the system for the first time are the most reachable. The outreach conversion rate in FL for comparable programs is 63% — more than 6 in 10 families reached enroll when the model is right</li>
+      <li>Pyx is not asking Molina FL to pilot an untested program. The model is already running in Florida for Aetna. The data on FL youth barriers, guardian burden, and loneliness-to-distress trajectories comes from this population — these are Molina's neighbors in the same Medicaid system</li>
+      <li>The food box is the enrollment moment made tangible — a family that receives something meaningful at onboarding engages at higher rates and sustains that engagement longer. It also directly addresses FL's #1 caregiver barrier (food insecurity at 27%) on day one</li>
+    </ul>
+  </div>
+
+  <div class="footer">Pyx Health | Molina Florida | Family Program Proposal | Confidential</div>
+</div>
+
+<!-- ============================================================
+     FULL-FAMILY PROGRAM
+     ============================================================ -->
+<div class="page" id="page-program">
+
+  <div class="value-anchor">
+    <svg viewBox="0 0 48 48" fill="none" style="width:48px;height:48px;flex-shrink:0">
+      <circle cx="24" cy="24" r="24" fill="rgba(73,166,1,.2)"/>
+      <path d="M16 24h16M28 18l6 6-6 6" stroke="#87d001" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="va-text">
+      <h2>The Pyx Family Connection and Well-Being Program treats the family as the unit of care. <strong>Three components. One model.</strong> Youth activation, caregiver support, and a tangible enrollment moment that opens the door to both.</h2>
+      <p>Most programs reach a member. Pyx reaches a household. Because the barriers driving a youth's missed appointments are usually living under the same roof as that youth — in the caregiver's stress, food insecurity, and social isolation. We address the system, not just the symptom.</p>
+    </div>
+  </div>
+
+  <div class="food-box-feature">
+    <div class="label">Included in Annual Program Fee</div>
+    <h3>The Family Food Box</h3>
+    <div class="sub">Up to 2 food boxes delivered to 10% of enrolled families at the moment of enrollment — turning the first Molina touchpoint into something a family remembers. Each box includes health and educational materials that introduce the program and connect families to resources from day one. Included in the full annual program fee alongside youth and guardian services.</div>
+    <div class="food-box-stats">
+      <div class="fbs"><div class="fbs-num">20,000</div><div class="fbs-lbl">Total enrolled population</div></div>
+      <div class="fbs"><div class="fbs-num">2,000</div><div class="fbs-lbl">Families receive boxes (10%)</div></div>
+      <div class="fbs"><div class="fbs-num">Up to 2</div><div class="fbs-lbl">Boxes per family</div></div>
+    </div>
+    <div class="food-box-contents">
+      <div class="ctitle">What's inside</div>
+      <ul>
+        <li>Nutritious food staples</li>
+        <li>Health education materials</li>
+        <li>Pyx program welcome guide</li>
+        <li>Youth well-being resources</li>
+        <li>Local food resource connections</li>
+        <li>Caregiver self-care guide</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tp-block" id="tp-foodbox">
+    <h4>Talking Points — Food Box</h4>
+    <ul>
+      <li>The food box is the enrollment activation moment — it creates a tangible, positive first impression that increases the likelihood of sustained engagement. A family that receives something meaningful at onboarding doesn't ignore the next call from Pyx</li>
+      <li>Food insecurity is the #1 caregiver barrier in Florida at 27% — and 13% of FL youth also identify it as a barrier. The food box directly addresses the barrier most likely to prevent a family from engaging at all</li>
+      <li>The health and educational materials inside are not filler — they are the first clinical touchpoint in the home. A well-being guide, a youth mental health resource, and a local food connection arrive together as a package that signals "this plan sees your whole family, not just your claims"</li>
+      <li>The 10% threshold (2,000 of 20,000) is deliberate — concentrated at the highest-need families identified through intake screening, maximizing the clinical and engagement impact per box delivered</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label">Program Pillar 1</div>
+    <div class="section-title">Youth Program — Ages 13–17</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="two-col" style="margin-bottom:24px">
+    <div class="program-pillar">
+      <div class="pillar-sub">Clinical Screening at Intake</div>
+      <div class="pillar-title">Establishing the Baseline</div>
+      <div class="pillar-body">Every enrolled youth is screened on the UCLA-3 Loneliness Scale and PHQ-2 mental distress tool at intake — generating clinical baselines that most Medicaid programs never capture for this age group.</div>
+      <ul class="pillar-list">
+        <li>UCLA-3: loneliness screening (scale 3–9; ≥6 = clinically lonely)</li>
+        <li>PHQ-2: mental distress screening (≥2 = clinical flag)</li>
+        <li>PRAPARE SDoH barrier identification</li>
+        <li>EPSDT-aligned documentation generated automatically</li>
+      </ul>
+    </div>
+    <div class="program-pillar">
+      <div class="pillar-sub">Care Navigation &amp; Engagement</div>
+      <div class="pillar-title">From Identification to Action</div>
+      <div class="pillar-body">Companion calls and the Pyx app work together to build the sustained relationship that moves youth toward care. The model reaches members who digital-first programs miss entirely.</div>
+      <ul class="pillar-list">
+        <li>Dedicated companion calls — human-first, youth-specific navigation</li>
+        <li>Pyx app: evidence-based social support activities</li>
+        <li>BH treatment initiation navigation for distressed youth</li>
+        <li>Community resource connection and barrier resolution</li>
+        <li>Family dynamics intervention when home instability is identified</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="spotlight">
+    <div class="tag">YOUTH PROGRAM — EVIDENCE-BASED INTERVENTIONS</div>
+    <h3>Social connection challenges, mindfulness, resilience-building, and digital well-being — designed for how 13–17-year-olds actually engage</h3>
+    <p>Pyx's Family program delivers seven intervention categories specifically designed for youth and their caregivers: Positive Relationship-Building · Mindfulness & Emotional Regulation · Strength & Resilience · Purpose & Meaning · Family Resilience & Conflict Resolution · Caregiver Well-Being · Digital & Social Media Well-Being. <strong>Social media is the #1 youth barrier in multiple markets — Pyx is the only program with a Digital & Social Media Well-Being intervention specifically designed to address it.</strong></p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label purple">Program Pillar 2</div>
+    <div class="section-title">Guardian / Caregiver Network</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="two-col" style="margin-bottom:24px">
+    <div class="program-pillar guardian">
+      <div class="pillar-sub">Caregiver Clinical Baseline</div>
+      <div class="pillar-title">Guardians Carry More Burden Than the Youth Data Shows</div>
+      <div class="pillar-body">FL caregivers screen lonelier than FL youth (UCLA-3 5.4 vs. 4.2) and carry substantially higher social needs (71% vs. 29%). These are the adults managing their child's care while in crisis themselves.</div>
+      <ul class="pillar-list">
+        <li>UCLA-3 loneliness screening (scale 3–9)</li>
+        <li>PHQ-4 distress screening — more comprehensive than youth PHQ-2</li>
+        <li>Full PRAPARE SDoH assessment: food, housing, transportation, income</li>
+        <li>Urgent needs flagged for priority navigation (24% of FL guardians)</li>
+      </ul>
+    </div>
+    <div class="program-pillar guardian">
+      <div class="pillar-sub">Caregiver-Specific Interventions</div>
+      <div class="pillar-title">Supporting the Person Holding the Household Together</div>
+      <div class="pillar-body">Caregiver well-being is not a soft concern — it is the infrastructure of the child's health. When the caregiver stabilizes, the household stabilizes, and youth care access follows.</div>
+      <ul class="pillar-list">
+        <li>Caregiver Peer Connection Circles — social support for isolated caregivers</li>
+        <li>Micro-Moments of Self-Care — practical well-being for caregivers managing burnout</li>
+        <li>Caregiver Gratitude Journal — evidence-based resilience intervention</li>
+        <li>Food &amp; housing resource navigation — #1 and #2 FL caregiver barriers</li>
+        <li>Connection to Medicaid-covered BH services for caregiver mental health</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="spotlight purple">
+    <div class="tag">GUARDIAN NETWORK — THE MISSING HALF OF FAMILY CARE</div>
+    <h3>FL guardians' SDoH need rate is 71% — vs. 29% for FL youth. The plan was measuring less than half of the household burden before the Guardian Network was added.</h3>
+    <p>Aetna FL's experience shows that enrolling guardians alongside youth more than doubles the visible burden in the household. Food insecurity (27%) and housing instability (25%) in FL caregivers directly explain why FL youth report "family dynamics" as their #1 barrier at 23%. <strong>The youth barrier is a symptom. The caregiver barrier is the cause. Pyx addresses both.</strong></p>
+  </div>
+  <div class="tp-block" id="tp-guardian">
+    <h4>Talking Points — Guardian Network</h4>
+    <ul>
+      <li>The Guardian Network is not an add-on — it is the mechanism by which the youth program works. A youth whose caregiver has unresolved food insecurity and housing instability will not sustain engagement, complete appointments, or follow through on referrals regardless of how well the youth-facing program is designed</li>
+      <li>FL guardians screen at UCLA-3 of 5.4 — approaching the clinical loneliness threshold of 6. These are adults experiencing clinically significant isolation while managing a child's Medicaid enrollment, behavioral health needs, and care access</li>
+      <li>24% of FL guardians have urgent needs requiring immediate resource navigation — nearly 1 in 4. Molina is not aware of any of these needs at enrollment. Pyx identifies them within the first engagement call</li>
+      <li>The PHQ-4 tool used for guardians is more comprehensive than the PHQ-2 used for youth — capturing both anxiety and depression dimensions — which is appropriate for an adult population carrying caregiver burden</li>
+    </ul>
+  </div>
+
+  <div class="footer">Pyx Health | Molina Florida | Family Program Proposal | Full-Family Program | Confidential</div>
+</div>
+
+<!-- ============================================================
+     PROVEN IN FLORIDA
+     ============================================================ -->
+<div class="page" id="page-florida">
+
+  <div class="value-anchor">
+    <svg viewBox="0 0 48 48" fill="none" style="width:48px;height:48px;flex-shrink:0">
+      <circle cx="24" cy="24" r="24" fill="rgba(73,166,1,.2)"/>
+      <path d="M16 24h16M28 18l6 6-6 6" stroke="#87d001" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="va-text">
+      <h2>We're not asking Molina Florida to pilot a hypothesis. <strong>Pyx is already running this program in Florida.</strong> The data below comes from the same Medicaid youth population Molina is adding — same state, same barriers, proven model.</h2>
+      <p>1,175 Florida youth and 242 Florida caregivers are enrolled in a comparable Pyx program operating in this state today. The loneliness scores, barrier maps, and caregiver burden data are not projections — they are observations from Florida Medicaid families.</p>
+    </div>
+  </div>
+
+  <div class="data-note"><strong>Data source:</strong> Pyx Health BH Medicaid Youth program, Florida — 12-month rolling. Running for Aetna FL BH Medicaid Youth population. Same state, comparable Medicaid population. Data reflects FL-specific findings.</div>
+
+  <div class="section-header" style="margin-top:0">
+    <div class="section-label blue">Florida Youth — Live Program</div>
+    <div class="section-title">What We're Seeing in This State</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi green"><div class="kpi-lbl">FL Youth Enrolled</div><div class="kpi-val">1,175</div><div class="kpi-ctx">BH Medicaid Youth · running today</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">Outreach Conversion</div><div class="kpi-val">63%</div><div class="kpi-ctx">FL families reached who enroll</div></div>
+    <div class="kpi purple"><div class="kpi-lbl">Screen Lonely</div><div class="kpi-val">22%</div><div class="kpi-ctx">UCLA-3 ≥6 at intake · 1 in 4 FL youth</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">Lonely → Distress</div><div class="kpi-val">67%</div><div class="kpi-ctx">Of lonely youth, PHQ-2 elevated</div></div>
+    <div class="kpi teal"><div class="kpi-lbl">Support Contacts</div><div class="kpi-val">1,208</div><div class="kpi-ctx">Human engagement events in FL</div></div>
+    <div class="kpi slate"><div class="kpi-lbl">SDoH Need Rate</div><div class="kpi-val">29%</div><div class="kpi-ctx">Avg 1.3 needs per member · 13% urgent</div></div>
+  </div>
+
+  <div class="billing-table">
+    <div style="font-family:'Roboto Slab',serif;font-weight:600;font-size:14px;color:#2e4456;margin-bottom:14px">Top SDoH Barriers — Florida Youth</div>
+    <div class="barrier-row"><div class="barrier-name">Family Dynamics</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#0076bf;width:100%"></div></div><div class="barrier-val">23%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Discrimination</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#0076bf;width:78%"></div></div><div class="barrier-val">18%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Income / Financial</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#0076bf;width:61%"></div></div><div class="barrier-val">14%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Safety</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#0076bf;width:57%"></div></div><div class="barrier-val">13%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Food Insecurity</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#0076bf;width:57%"></div></div><div class="barrier-val">13%</div></div>
+  </div>
+
+  <div class="spotlight blue">
+    <div class="tag">FLORIDA — DISCRIMINATION AT 18%</div>
+    <h3>FL has the highest discrimination barrier in the national portfolio — a health equity signal that belongs in Molina's equity reporting from day one</h3>
+    <p>Discrimination as a health barrier at 18% in Florida Medicaid youth is not a background statistic — it is a member-level health equity data point that Molina's equity and quality teams need in order to document SDOH coding, meet CMS equity reporting requirements, and demonstrate LTSS/BH access equity across the population. <strong>Pyx generates this data. Claims data cannot.</strong></p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label purple">Florida Guardians — Live Program</div>
+    <div class="section-title">The Caregiver Burden in This State</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi purple"><div class="kpi-lbl">FL Guardians Enrolled</div><div class="kpi-val">242</div><div class="kpi-ctx">Caregivers &amp; parents · running today</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">UCLA-3 Score</div><div class="kpi-val">5.4</div><div class="kpi-ctx">vs. FL youth 4.2 — guardians carry more loneliness</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">PHQ-4 Score</div><div class="kpi-val">5.1</div><div class="kpi-ctx">Above clinical distress threshold (≥3)</div></div>
+    <div class="kpi teal"><div class="kpi-lbl">Lonely → Distress</div><div class="kpi-val">67%</div><div class="kpi-ctx">Of lonely FL guardians, PHQ-4 elevated</div></div>
+    <div class="kpi green"><div class="kpi-lbl">SDoH Need Rate</div><div class="kpi-val">71%</div><div class="kpi-ctx">24% flagged urgent — vs. 29% for youth</div></div>
+    <div class="kpi slate"><div class="kpi-lbl">Support Contacts</div><div class="kpi-val">121</div><div class="kpi-ctx">Guardian engagement events</div></div>
+  </div>
+
+  <div class="billing-table">
+    <div style="font-family:'Roboto Slab',serif;font-weight:600;font-size:14px;color:#2e4456;margin-bottom:14px">Top SDoH Barriers — Florida Guardians</div>
+    <div class="barrier-row"><div class="barrier-name">Food Insecurity</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#5542a7;width:100%"></div></div><div class="barrier-val">27%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Housing Instability</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#5542a7;width:93%"></div></div><div class="barrier-val">25%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Transportation</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#5542a7;width:52%"></div></div><div class="barrier-val">14%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Income / Financial</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#5542a7;width:41%"></div></div><div class="barrier-val">11%</div></div>
+    <div class="barrier-row"><div class="barrier-name">Safety</div><div class="barrier-bar-wrap"><div class="barrier-bar-fill" style="background:#5542a7;width:41%"></div></div><div class="barrier-val">11%</div></div>
+  </div>
+
+  <div class="tp-block" id="tp-florida">
+    <h4>Talking Points — Proven in Florida</h4>
+    <ul>
+      <li>Pyx is not a new entrant in Florida. We're operating a comparable youth and guardian program in this state today, which means the barrier data, loneliness scores, and caregiver burden numbers are not projections from a national average — they are observations from Florida Medicaid families. Molina's new population will look like this data</li>
+      <li>63% outreach conversion in FL means more than 6 in 10 FL families reached will enroll. The model resonates in this state. With 20,000 new Molina FL lives and the same outreach approach, enrollment scale is a function of outreach capacity, not conversion likelihood</li>
+      <li>The 67% lonely-to-distress crossover in FL youth is the BH pipeline stat: more than 2 in 3 lonely FL youth also show PHQ-2 distress. These are the members who will generate behavioral health claims in 12–24 months if not intercepted. Pyx is the interception point</li>
+      <li>FL guardian SDoH need at 71% vs. youth SDoH need at 29% is the household burden gap — the plan was measuring less than half the need before the Guardian Network was added. Enrolling guardians alongside youth more than doubles the visible burden and the opportunity to resolve it before it becomes utilization</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label">National Portfolio</div>
+    <div class="section-title">The FL Model at Scale — 5 States, 6,867 Members</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi green"><div class="kpi-lbl">Total Members</div><div class="kpi-val">6,867</div><div class="kpi-ctx">5,622 youth + 1,245 guardians</div></div>
+    <div class="kpi teal"><div class="kpi-lbl">Markets Active</div><div class="kpi-val">5</div><div class="kpi-ctx">FL · OK · KY · TX · PA</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">Avg Outreach Rate</div><div class="kpi-val">75%</div><div class="kpi-ctx">Conversion across all markets</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">Combined Eligible Pool</div><div class="kpi-val">374K+</div><div class="kpi-ctx">Youth members across active markets</div></div>
+  </div>
+
+  <div class="footer">Pyx Health | Molina Florida | Family Program Proposal | Proven in Florida | Confidential</div>
+</div>
+
+<!-- ============================================================
+     PLAN VALUE
+     ============================================================ -->
+<div class="page" id="page-value">
+
+  <div class="value-anchor">
+    <svg viewBox="0 0 48 48" fill="none" style="width:48px;height:48px;flex-shrink:0">
+      <circle cx="24" cy="24" r="24" fill="rgba(73,166,1,.2)"/>
+      <path d="M16 24h16M28 18l6 6-6 6" stroke="#87d001" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="va-text">
+      <h2>Every screening, every barrier identification, every food box delivered generates something Molina needs: <strong>clinical documentation, quality measure data, SDOH intelligence, and equity evidence</strong> — all from a population that generates none of it today.</h2>
+      <p>Pyx doesn't just improve member outcomes. It produces the data infrastructure Molina FL needs to perform on the measures that matter — EPSDT compliance, HEDIS behavioral health access, SDOH reporting, and equity documentation — for a population the plan is only beginning to know.</p>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-bottom:24px">
+    <div class="value-tile">
+      <div class="vt-measure">EPSDT Compliance</div>
+      <div class="vt-title">PHQ-2 &amp; UCLA-3 screenings generate behavioral health assessment documentation aligned with EPSDT requirements</div>
+      <div class="vt-body">Every enrolled youth receives standardized mental health and loneliness screening at intake. These screenings produce the behavioral health assessment documentation Medicaid EPSDT requires — documentation that most youth programs never generate because they don't do intake screening. Pyx creates a clinical record from day one.</div>
+    </div>
+    <div class="value-tile purple">
+      <div class="vt-measure">HEDIS BH Access — FUH / FUM</div>
+      <div class="vt-title">The lonely-to-distress pipeline is the HEDIS FUH/FUM pipeline — Pyx identifies the members and can close the loop</div>
+      <div class="vt-body">67% of lonely FL youth show PHQ-2 distress — these are members on a pathway to BH treatment initiation. When Pyx identifies a youth at the lonely-to-distress threshold, it navigates them toward care. The follow-up contact after that first BH visit is the FUH/FUM close. Pyx is the mechanism for both identification and closure.</div>
+    </div>
+    <div class="value-tile teal">
+      <div class="vt-measure">SDOH Documentation</div>
+      <div class="vt-title">Member-reported barrier data that claims cannot produce — family dynamics, discrimination, food, housing — documented at the household level</div>
+      <div class="vt-body">PRAPARE screening for every enrolled youth and guardian generates the SDoH documentation Molina needs for CMS SDOH reporting, value-based contract requirements, and health equity plans. Family dynamics (23%), discrimination (18%), food insecurity (27% of guardians) — none of this is in claims. All of it is in Pyx data.</div>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-bottom:24px">
+    <div class="value-tile blue">
+      <div class="vt-measure">Health Equity</div>
+      <div class="vt-title">Discrimination at 18% in FL youth is the highest in the national portfolio — health equity documentation at the member level</div>
+      <div class="vt-body">Pyx surfaces discrimination as a health barrier through direct member conversation. In Florida, 18% of youth identify discrimination — a finding that belongs in Molina's equity assessment, SDOH coding, and annual equity plan documentation. This is member-level intelligence CMS is increasingly requiring plans to demonstrate.</div>
+    </div>
+    <div class="value-tile orange">
+      <div class="vt-measure">Food Box — SDOH Intervention</div>
+      <div class="vt-title">Each food box delivered is a documented food insecurity intervention — the connection between the benefit and the barrier resolution</div>
+      <div class="vt-body">Food insecurity is the #1 FL caregiver barrier (27%) and present in 13% of FL youth. The food box is not just an engagement driver — it is a documented SDoH food intervention, creating the evidence trail that connects Molina's benefit to a resolved food access need. That documentation feeds SDOH reporting.</div>
+    </div>
+    <div class="value-tile">
+      <div class="vt-measure">Long-Term Cost Risk Mitigation</div>
+      <div class="vt-title">Identifying lonely, distressed youth at 13 prevents the BH claims, ED visits, and crisis interventions at 17, 19, and 23</div>
+      <div class="vt-body">1 in 4 FL youth screen lonely at intake. 67% of those will show distress. Without interception, that cohort generates BH initiation claims, ED utilization for mental health crises, and inpatient BH admits as they age. Pyx intercepts before the trajectory solidifies. The cost avoidance is not measurable at year one — but the risk is already present in the population when they enroll.</div>
+    </div>
+  </div>
+
+  <div class="tp-block" id="tp-value">
+    <h4>Talking Points — Plan Value</h4>
+    <ul>
+      <li>EPSDT documentation is a compliance requirement, not a nice-to-have. PHQ-2 behavioral health screening at intake for every enrolled youth creates the documentation record CMS and Florida Medicaid expect for EPSDT compliance. Without a program like Pyx, Molina is relying on providers to generate this documentation — providers who see this population sporadically and rarely at ages 13–17</li>
+      <li>The FUH/FUM pipeline is direct: Pyx identifies the lonely-distress youth cohort (67% crossover in FL), navigates them to BH treatment initiation, and can coordinate the follow-up contact that closes the HEDIS measure. That is a quality measure pathway built into the program model</li>
+      <li>SDOH documentation from Pyx — barriers, food box delivery, resource connections — feeds Molina's CMS SDOH reporting, value-based contract performance, and health equity plan requirements. This is documentation the plan cannot generate any other way for a youth and guardian population</li>
+      <li>The long-term cost argument is the most important one for new lives: these families are entering the system now. The loneliness, the caregiver burden, the food insecurity — it is all present at enrollment. The window to address it before it becomes high-cost utilization is open right now. It closes over time as patterns solidify and disengagement becomes the default</li>
+    </ul>
+  </div>
+
+  <div class="footer">Pyx Health | Molina Florida | Family Program Proposal | Plan Value | Confidential</div>
+</div>
+
+<!-- ============================================================
+     GETTING TO OCTOBER 1
+     ============================================================ -->
+<div class="page" id="page-start">
+
+  <div class="value-anchor">
+    <svg viewBox="0 0 48 48" fill="none" style="width:48px;height:48px;flex-shrink:0">
+      <circle cx="24" cy="24" r="24" fill="rgba(73,166,1,.2)"/>
+      <path d="M16 24h16M28 18l6 6-6 6" stroke="#87d001" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="va-text">
+      <h2>The goal is <strong>live by October 1.</strong> That is achievable with contract execution by mid-August. Everything Pyx needs to configure, test, and launch is in motion — the question is the timing of the decision.</h2>
+      <p>Pyx is already operating in Florida. The clinical model is built, the intervention library is tested, and the FL market infrastructure is in place. Getting from contract to live for Molina FL is a configuration and eligibility file exercise, not a ground-up build.</p>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top:0">
+    <div class="section-label">Program Scope</div>
+    <div class="section-title">Everything Included — One Annual Fee</div>
+    <div class="section-divider"></div>
+  </div>
+  <div style="background:#fff;border-radius:10px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #49a601">
+    <div style="font-size:12px;color:#6b7f8f;line-height:1.7">The Molina Florida Family program is a single annual fee covering all three components: youth engagement, guardian support, and the food box program. No separate line items. No add-on costs. One fee delivers the full-family model — youth UCLA-3/PHQ-2 screening, care navigation, and companion calls; guardian UCLA-3/PHQ-4/PRAPARE screening and care navigation; and up to 2 food boxes for 10% of the enrolled population, each including health and educational materials.</div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi green"><div class="kpi-lbl">Total Lives</div><div class="kpi-val">20,000</div><div class="kpi-ctx">Molina FL new population</div></div>
+    <div class="kpi purple"><div class="kpi-lbl">Youth Program</div><div class="kpi-val">Ages 13–17</div><div class="kpi-ctx">Included · UCLA-3 · PHQ-2 · PRAPARE · companion calls + app</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">Guardian Program</div><div class="kpi-val">Caregivers</div><div class="kpi-ctx">Included · UCLA-3 · PHQ-4 · PRAPARE · care navigation</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">Food Boxes</div><div class="kpi-val">2,000</div><div class="kpi-ctx">Included · 10% of population · up to 2 boxes · at enrollment</div></div>
+    <div class="kpi teal"><div class="kpi-lbl">Target Go-Live</div><div class="kpi-val">Oct 1</div><div class="kpi-ctx">2026 · Requires contract by mid-August</div></div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label">Timeline</div>
+    <div class="section-title">Path to October 1</div>
+    <div class="section-divider"></div>
+  </div>
+  <div style="background:#fff;border-radius:10px;padding:24px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <div class="timeline-item">
+      <div class="tl-date">Now</div>
+      <div class="tl-content">
+        <div class="tl-title">Decision to proceed</div>
+        <div class="tl-body">Molina FL confirms program scope, population size, and food box parameters. Pyx begins SOW drafting.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Mid-Aug 2026</div>
+      <div class="tl-content">
+        <div class="tl-title">Contract execution</div>
+        <div class="tl-body">SOW signed. Eligibility file format confirmed. Food box logistics (delivery cadence, address collection, content review) finalized. Configuration begins.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Late Aug 2026</div>
+      <div class="tl-content">
+        <div class="tl-title">First eligibility file received</div>
+        <div class="tl-body">Molina FL provides first eligibility file. Pyx configures outreach lists, program cohort assignments (youth vs. guardian), and food box targeting logic.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Sept 2026</div>
+      <div class="tl-content">
+        <div class="tl-title">Testing, training, and launch prep</div>
+        <div class="tl-body">End-to-end testing completed. Care team trained on Molina FL population and food box protocols. Member communications reviewed and approved. First boxes staged for delivery.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date green">Oct 1, 2026</div>
+      <div class="tl-content">
+        <div class="tl-title">Program live — outreach begins</div>
+        <div class="tl-body">Pyx begins outreach to Molina FL youth and guardian population. First enrollments and food box deliveries commence. Intake screenings (UCLA-3, PHQ-2/PHQ-4, PRAPARE) begin generating clinical baselines.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-label">What We Need</div>
+    <div class="section-title">From Molina FL to Make This Work</div>
+    <div class="section-divider"></div>
+  </div>
+  <div class="two-col" style="margin-bottom:24px">
+    <div style="background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#49a601;margin-bottom:10px">Program Decisions</div>
+      <ul style="list-style:none;padding:0">
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Confirm youth age range and eligibility criteria</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Confirm guardian/caregiver enrollment approach</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Confirm food box targeting logic (highest-need at intake vs. first 2,000 enrolled)</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Confirm member communication approval process</li>
+      </ul>
+    </div>
+    <div style="background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#49a601;margin-bottom:10px">Data &amp; Operations</div>
+      <ul style="list-style:none;padding:0">
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Eligibility file format and delivery cadence</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Address data for food box delivery logistics</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;border-bottom:1px solid #eff1f3;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>SDOH data reporting format and destination</li>
+        <li style="font-size:13px;color:#2e4456;padding:8px 0;display:flex;gap:10px"><span style="color:#49a601;font-weight:700">→</span>Point of contact for ongoing program management</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="spotlight">
+    <div class="tag">THE BOTTOM LINE</div>
+    <h3>October 1 is achievable. The model is built, the FL infrastructure exists, and the population is entering the system now.</h3>
+    <p>Pyx Health is already in Florida, already running this program for a comparable Medicaid youth and guardian population, and already generating the screening data, barrier intelligence, and SDOH documentation that Molina FL will need on day one. The food box program is ready to configure. The care team is trained on FL market dynamics. <strong>The only variable is the contract execution date. Mid-August gets us to October 1.</strong></p>
+  </div>
+  <div class="tp-block" id="tp-start">
+    <h4>Talking Points — Getting to October 1</h4>
+    <ul>
+      <li>October 1 is the right target because it captures the new lives enrollment wave — families who come in at or near that date are the highest-value engagement opportunity. A program that goes live after the enrollment window has passed is chasing members who have already formed disengagement habits</li>
+      <li>Mid-August contract execution is the critical path item — Pyx needs 6 weeks from contract to launch, and that time is used for eligibility file configuration, food box logistics finalization, and care team preparation. The model itself doesn't need to be built from scratch; it already exists in Florida</li>
+      <li>The food box logistics are the longest lead-time item — address data, box content approval, and delivery vendor coordination need to begin at contract execution, not after. That's why the August deadline matters specifically for the food box component</li>
+      <li>Pyx's ask at this meeting is a decision in principle — scope, population, and food box parameters. The SOW can follow within 5 business days of that alignment. From SOW to signed contract is typically 2–3 weeks, which puts signature in mid-August exactly where it needs to be</li>
+    </ul>
+  </div>
+
+  <div class="footer">Pyx Health | Molina Florida | Family Program Proposal | Confidential · Prepared for Molina FL Leadership</div>
+</div>
+
+<script>
+function showPage(id,el){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('page-'+id).classList.add('active');
+  el.classList.add('active');
+}
+function toggleTP(){
+  var btn=document.getElementById('tp-toggle');
+  var on=btn.classList.toggle('active');
+  document.querySelectorAll('.tp-block').forEach(function(b){b.classList.toggle('visible',on)});
+}
+</script>
+</body>
+</html>
